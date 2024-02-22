@@ -1,5 +1,43 @@
 import * as React from "react"
+import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import styled from "styled-components"
+
+
+const StyledHeader = styled.header`
+  margin: 0 auto;
+  padding: var(--space-4) var(--size-gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  background: ${props => props.theme.header.color};
+`
+
+const StyledLink = styled(Link)`
+  font-size: var(--font-sm);
+  text-decoration: none;
+  background: ${props => props.theme.header.color};
+`
+const Header = ({ siteTitle }) => (
+  <StyledHeader>
+    <StyledLink to="/">
+      {siteTitle}
+    </StyledLink>
+  </StyledHeader>
+)
+
+Header.propTypes = {
+  siteTtle: PropTypes.string
+}
+
+Header.defaultProp = {
+  siteTitle: ""
+}
+
+export default Header
+
+/**
 
 const Header = ({ siteTitle }) => (
   <header
@@ -30,3 +68,4 @@ const Header = ({ siteTitle }) => (
 )
 
 export default Header
+**/
