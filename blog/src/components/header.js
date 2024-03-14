@@ -28,12 +28,13 @@ const Header = ({ siteTitle }) => (
 )
 
 Header.propTypes = {
-  siteTtle: PropTypes.string
+  siteTitle: PropTypes.string // Fixed typo here
 }
 
-Header.defaultProp = {
-  siteTitle: ""
+Header.defaultProps = {
+  siteTitle: "" // Fixed typo here
 }
+
 
 export default Header
 
