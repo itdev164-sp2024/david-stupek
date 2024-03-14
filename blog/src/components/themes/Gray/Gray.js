@@ -1,7 +1,7 @@
 const theme = {
     header: {
-        backgroundColor: `var(--color-primary)`,
-        color: `var(--color-contrast)`
+        backgroundColor: `var(--color-primary)`, // This line was changed
+        color: `var(--color-contrast)` // This line was changed
     }
 }
 
