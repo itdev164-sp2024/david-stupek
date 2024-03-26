@@ -7,7 +7,7 @@ export const BaseContainer = ({ children, flex = false, ...rest }) => {
     return <Componet {...rest}>{children}</Componet>
 }
 
-BaseContainer.propTypes + {
+BaseContainer.propTypes = {
     flex: PropTypes.bool,
     as: PropTypes.string,
     children: PropTypes.node.isRequired
