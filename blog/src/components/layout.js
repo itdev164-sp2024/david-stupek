@@ -9,6 +9,8 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled, { ThemeProvider } from "styled-components"
+import { Main } from './Main'
+import { Footer } from './Footer'
 
 
 import { Header } from "./Header"
@@ -37,8 +39,8 @@ return (
   <ThemeProvider theme={Gray}>
     <Header siteTitle={data.site.siteMetadata?.title || 'Title'} />
     <Content>
-      <main>{children}</main> 
-      <footer 
+      <Main>{children}</Main> 
+      <Footer 
         style={{
           marginTop: `var(--space-5)`,
           fontSize: `var(--font-sm)`,
@@ -47,7 +49,7 @@ return (
           {new Date().getFullYear()} &middot; Built with
           {``}
           <a href="https://www.gatsbyjs.com">Gatsby and David Stupek</a>
-        </footer>
+        </Footer>
     </Content>
   </ThemeProvider>
 )}
