@@ -2,7 +2,9 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import { Search } from 'styled-components'
 import { H1 } from "../Heading"
+import { IconButton } from "../Button"
 import { Section } from '../Section'
 
 const StyledHeader = styled.header`
@@ -12,13 +14,13 @@ const StyledHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   height: 50px;
-  background: ${props => props.theme.header.color};
+  background: ${({ theme }) => theme.variants.header.primary.backgroundColor};
 `
 
 const StyledLink = styled(Link)`
   font-size: var(--font-sm);
   text-decoration: none;
-  background: ${props => props.theme.header.color};
+  background: ${({ theme }) => theme.variants.header.primary.backgroundColor};
 `
 const Header = ({ siteTitle }) => (
   <StyledHeader>
@@ -30,7 +32,7 @@ const Header = ({ siteTitle }) => (
     </StyledLink>
    </Section>
    <Section width={1/12}>
-    Search
+    <IconButton icon={<Search />} variant='contrast' />
    </Section>
   </StyledHeader>
 )
